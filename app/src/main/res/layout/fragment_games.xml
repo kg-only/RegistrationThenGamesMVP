@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_for_recycler"
+    android:orientation="vertical"
+    tools:context=".fragment.GamesFragment">
+
+
+    <TextView
+        android:id="@+id/Action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Action"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="2dp"
+        android:background="#7b7b7b"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler1ViewHero"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/item_view" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="2dp"
+        android:background="#7b7b7b"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp" />
+
+    <TextView
+        android:id="@+id/RPG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="RPG"
+        android:textColor="@color/white"
+        android:textSize="30sp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="2dp"
+        android:background="#7b7b7b"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler2ViewHero"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/item_view" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="2dp"
+        android:background="#7b7b7b"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp" />
+
+    <TextView
+        android:id="@+id/Shooter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Shooter"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="2dp"
+        android:background="#7b7b7b"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler3ViewHero"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/item_view" />
+
+
+</LinearLayout>

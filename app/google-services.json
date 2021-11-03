@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1019985269762",
+    "project_id": "registrationthengames",
+    "storage_bucket": "registrationthengames.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1019985269762:android:0c67513c2e75ea5f1ec31b",
+        "android_client_info": {
+          "package_name": "com.example.registrationthengames"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1019985269762-dpv1f62k8mj245948107q36lklvkfnku.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvttb1XdZKmEBQgViVjadqZ2dTqemg0qc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1019985269762-dpv1f62k8mj245948107q36lklvkfnku.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

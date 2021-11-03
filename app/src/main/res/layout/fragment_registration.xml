@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backround_login"
+    tools:context=".activities.MainActivity">
+
+    <TextView
+        android:id="@+id/rawgView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rawgRegView"
+        android:layout_centerInParent="true"
+        android:text="@string/rawg"
+        android:textColor="#FE7209"
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/rawgRegView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editNumber"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:text="@string/registrationRaw"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editEmail"
+        android:layout_marginHorizontal="15dp"
+        android:hint="@string/number"
+        android:textColorHint="@color/white"
+        app:counterEnabled="true"
+        app:counterMaxLength="9"
+        app:counterTextColor="@color/white"
+        app:endIconMode="clear_text"
+        app:errorEnabled="true"
+        app:helperText="Введите номер"
+        app:helperTextTextColor="#A365A8"
+        app:prefixText="+996"
+        app:prefixTextColor="@color/white"
+        app:startIconDrawable="@drawable/ic_call"
+        app:startIconTint="@color/white"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp">
+
+        <EditText
+            android:id="@+id/numberRegister"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_text_color"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:textColor="@color/white"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editPassword"
+        android:layout_marginHorizontal="15dp"
+        android:hint="@string/email"
+        android:textColorHint="@color/white"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/white"
+        app:helperText="Введите почту"
+        app:helperTextTextColor="#A365A8"
+        app:startIconDrawable="@drawable/ic_email"
+        app:startIconTint="@color/white"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp">
+
+        <EditText
+            android:id="@+id/emailRegister"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_text_color"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,TextFields" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginHorizontal="15dp"
+        android:hint="@string/password"
+        android:textColorHint="@color/white"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/white"
+        app:helperText="Введите пароль"
+        app:helperTextTextColor="#A365A8"
+        app:startIconDrawable="@drawable/ic_lock"
+        app:startIconTint="@color/white"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp">
+
+        <EditText
+            android:id="@+id/passwordRegister"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_text_color"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editConfirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editPassword"
+        android:layout_marginHorizontal="15dp"
+        android:hint="@string/confirm_password"
+        android:textColorHint="@color/white"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/white"
+        app:helperText="Подтвердите пароль"
+        app:helperTextTextColor="#A365A8"
+        app:startIconDrawable="@drawable/ic_lock"
+        app:startIconTint="@color/white"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp">
+
+        <EditText
+            android:id="@+id/confirmPasswordRegister"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_text_color"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editConfirmPassword"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/reg"
+        android:background="@drawable/btn"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        tools:layout_editor_absoluteX="60dp" />
+
+
+</RelativeLayout>
+
+
+
+
