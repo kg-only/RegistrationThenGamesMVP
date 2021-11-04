@@ -59,19 +59,65 @@ class GamesFragment : BaseFragment() {
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.recycler3ViewHero.adapter = adapterThird
 
-        getGames()
+        getActionGames(2,5,"action")
+        getAdventureGames(2,5,"adventure")
+        getShooterGames(2,5,"shooter")
     }
 
-    private fun getGames() {
+    private fun getActionGames(page:Int, pageSize: Int, genre: String) {
         service.getGames(
-            2, 4, null, null, null
+            page, pageSize,  genre
         ).enqueue(object : Callback<GamesResponse> {
             override fun onResponse(call: Call<GamesResponse>, response: Response<GamesResponse>) {
                 if (response.isSuccessful && response.body() != null) {
                     val data = response.body()
+
                     adapter.setItems(data!!.results)
-                    adapterSecond.setItems(data.results)
-                    adapterThird.setItems(data.results)
+                }
+            }
+
+            override fun onFailure(call: Call<GamesResponse>, t: Throwable) {
+                Log.e("Error from response", "error!!!!", t)
+                Toast.makeText(
+                    requireContext(),
+                    "We`ve some error${t.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
+        })
+    }
+    private fun getAdventureGames(page:Int, pageSize: Int, genre: String) {
+        service.getGames(
+            page, pageSize,  genre
+        ).enqueue(object : Callback<GamesResponse> {
+            override fun onResponse(call: Call<GamesResponse>, response: Response<GamesResponse>) {
+                if (response.isSuccessful && response.body() != null) {
+                    val data = response.body()
+
+                    adapterSecond.setItems(data!!.results)
+                }
+            }
+
+            override fun onFailure(call: Call<GamesResponse>, t: Throwable) {
+                Log.e("Error from response", "error!!!!", t)
+                Toast.makeText(
+                    requireContext(),
+                    "We`ve some error${t.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
+        })
+    }
+    private fun getShooterGames(page:Int, pageSize: Int, genre: String) {
+        service.getGames(
+            page, pageSize,  genre
+        ).enqueue(object : Callback<GamesResponse> {
+            override fun onResponse(call: Call<GamesResponse>, response: Response<GamesResponse>) {
+                if (response.isSuccessful && response.body() != null) {
+                    val data = response.body()
+                    adapterThird.setItems(data!!.results)
                 }
             }
 

@@ -11,8 +11,8 @@ interface RetrofitService {
         fun getGames(
     @Query("page") page: Int,
     @Query("page_size") pageSize: Int,
-    @Query("developers") developers: String? = null,
-    @Query("publishers") publisher: String? = null,
+//    @Query("developers") developers: String? = null,
+//    @Query("publishers") publisher: String? = null,
     @Query("genres") genre: String? = null
     ): Call<GamesResponse>
 }
