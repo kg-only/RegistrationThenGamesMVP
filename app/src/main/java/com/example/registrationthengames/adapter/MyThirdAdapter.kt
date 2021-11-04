@@ -12,7 +12,7 @@ import com.example.registrationthengames.modelGames.GameResult
 import com.squareup.picasso.Picasso
 
 class MyThirdAdapter(
-    private val onClick: (GameResult) -> Unit
+    private val onClick: (GameResult) -> Unit,
 ) : RecyclerView.Adapter<MyThirdAdapter.ViewHolder>() {
     private val dataResults = mutableListOf<GameResult>()
 

@@ -13,7 +13,6 @@
         android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:layout_weight="1"
         tools:src="@tools:sample/avatars" />
@@ -22,7 +21,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="0.8">
 
         <TextView
             android:id="@+id/name"
@@ -97,41 +96,11 @@
 
 
         <LinearLayout
-            android:id="@+id/linearGenres"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/linearReleased"
-            android:layout_marginTop="15dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_weight="1"
-                android:text="Slug:"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/slug"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="30dp"
-                android:layout_weight="1"
-                android:hint="Slug"
-                android:textAlignment="textEnd"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:textSize="20sp" />
-        </LinearLayout>
-
-        <LinearLayout
             android:id="@+id/linearRating"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/linearGenres"
-            android:layout_marginTop="15dp">
+            android:layout_below="@+id/linearReleased"
+            android:layout_marginTop="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -143,18 +112,73 @@
                 android:textColorHint="@color/white"
                 android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/rating"
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="@style/Widget.AppCompat.RatingBar.Indicator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="30dp"
+                android:numStars="5"
+                android:progressBackgroundTint="@color/white"
+                android:progressTint="#FEE387" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearRatingTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearRating"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
                 android:layout_weight="1"
-                android:hint="Rating"
-                android:textAlignment="textEnd"
+                android:text="RatingTop:"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
                 android:textSize="20sp" />
+
+            <RatingBar
+                android:id="@+id/ratingBarTop"
+                style="@style/Widget.AppCompat.RatingBar.Indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:numStars="5"
+                android:progressBackgroundTint="@color/white"
+                android:progressTint="#FEE387" />
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearRatingCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearRatingTop"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_weight="1"
+                android:text="RatingCount:"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="20sp" />
+
+            <RatingBar
+                android:id="@+id/ratingBarCount"
+                style="@style/Widget.AppCompat.RatingBar.Indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:numStars="5"
+                android:progressBackgroundTint="@color/white"
+                android:progressTint="#FEE387" />
+        </LinearLayout>
+
 
     </RelativeLayout>
 

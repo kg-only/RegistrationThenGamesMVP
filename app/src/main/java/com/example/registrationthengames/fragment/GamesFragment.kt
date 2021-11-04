@@ -25,7 +25,7 @@ import retrofit2.Response
 private lateinit var service: RetrofitService
 private lateinit var adapter: MyAdapter
 private lateinit var adapterSecond: MySecondAdapter
-private lateinit var adapterThird: MyThirdAdapter
+lateinit var adapterThird: MyThirdAdapter
 private lateinit var binding: FragmentGamesBinding
 
 class GamesFragment : BaseFragment() {
@@ -39,39 +39,87 @@ class GamesFragment : BaseFragment() {
         return binding.root
     }
 
-    @SuppressLint("WrongConstant")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         service = Common.retrofitService
+
         ////first adapter
         adapter = MyAdapter(onClick = { startInfoFragment(it) })
         binding.recycler1ViewHero.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.recycler1ViewHero.adapter = adapter
+
         ////second adapter
         adapterSecond = MySecondAdapter(onClick = { startInfoFragment(it) })
         binding.recycler2ViewHero.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.recycler2ViewHero.adapter = adapterSecond
+
         ////third adapter
         adapterThird = MyThirdAdapter(onClick = { startInfoFragment(it) })
         binding.recycler3ViewHero.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.recycler3ViewHero.adapter = adapterThird
 
-        getGames()
+        getActionGames(1,5,"action")
+        getAdventureGames(1,5,"adventure")
+        getShooterGames(1,5,"shooter")
     }
 
-    private fun getGames() {
+    private fun getActionGames(page:Int, pageSize: Int, genre: String) {
         service.getGames(
-            2, 4, null, null, null
+            page, pageSize,  genre
         ).enqueue(object : Callback<GamesResponse> {
             override fun onResponse(call: Call<GamesResponse>, response: Response<GamesResponse>) {
                 if (response.isSuccessful && response.body() != null) {
                     val data = response.body()
+
                     adapter.setItems(data!!.results)
-                    adapterSecond.setItems(data.results)
-                    adapterThird.setItems(data.results)
+                }
+            }
+
+            override fun onFailure(call: Call<GamesResponse>, t: Throwable) {
+                Log.e("Error from response", "error!!!!", t)
+                Toast.makeText(
+                    requireContext(),
+                    "We`ve some error${t.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
+        })
+    }
+    private fun getAdventureGames(page:Int, pageSize: Int, genre: String) {
+        service.getGames(
+            page, pageSize,  genre
+        ).enqueue(object : Callback<GamesResponse> {
+            override fun onResponse(call: Call<GamesResponse>, response: Response<GamesResponse>) {
+                if (response.isSuccessful && response.body() != null) {
+                    val data = response.body()
+
+                    adapterSecond.setItems(data!!.results)
+                }
+            }
+
+            override fun onFailure(call: Call<GamesResponse>, t: Throwable) {
+                Log.e("Error from response", "error!!!!", t)
+                Toast.makeText(
+                    requireContext(),
+                    "We`ve some error${t.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
+        })
+    }
+    private fun getShooterGames(page:Int, pageSize: Int, genre: String) {
+        service.getGames(
+            page, pageSize,  genre
+        ).enqueue(object : Callback<GamesResponse> {
+            override fun onResponse(call: Call<GamesResponse>, response: Response<GamesResponse>) {
+                if (response.isSuccessful && response.body() != null) {
+                    val data = response.body()
+                    adapterThird.setItems(data!!.results)
                 }
             }
 
