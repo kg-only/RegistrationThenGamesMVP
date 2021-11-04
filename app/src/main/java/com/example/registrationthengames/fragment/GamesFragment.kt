@@ -61,9 +61,9 @@ class GamesFragment : BaseFragment() {
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.recycler3ViewHero.adapter = adapterThird
 
-        getActionGames(1,5,"action")
-        getAdventureGames(1,5,"adventure")
-        getShooterGames(1,5,"shooter")
+        getActionGames(1,10,"action")
+        getAdventureGames(1,10,"adventure")
+        getShooterGames(1,10,"shooter")
     }
 
     private fun getActionGames(page:Int, pageSize: Int, genre: String) {
