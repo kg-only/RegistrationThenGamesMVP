@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/back_for_info"
     android:orientation="vertical"
-    tools:context=".fragment.InfoFragment">
+    tools:context=".main.ui.gameinfo.InfoFragment">
 
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -21,7 +21,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="0.8">
+        android:layout_weight="0.4">
 
         <TextView
             android:id="@+id/name"
@@ -124,61 +124,20 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearRatingTop"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/linearRating"
-            android:layout_marginTop="15dp">
+            android:layout_height="match_parent"
+            android:layout_below="@+id/linearRating">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_weight="1"
-                android:text="RatingTop:"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:textSize="20sp" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerScreenshots"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                tools:listitem="@layout/screenshots_view">
+            </androidx.recyclerview.widget.RecyclerView>
 
-            <RatingBar
-                android:id="@+id/ratingBarTop"
-                style="@style/Widget.AppCompat.RatingBar.Indicator"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="30dp"
-                android:numStars="5"
-                android:progressBackgroundTint="@color/white"
-                android:progressTint="@color/white" />
         </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearRatingCount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/linearRatingTop"
-            android:layout_marginTop="15dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_weight="1"
-                android:text="RatingCount:"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:textSize="20sp" />
-
-            <RatingBar
-                android:id="@+id/ratingBarCount"
-                style="@style/Widget.AppCompat.RatingBar.Indicator"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="30dp"
-                android:numStars="5"
-                android:progressBackgroundTint="@color/white"
-                android:progressTint="@color/white" />
-        </LinearLayout>
-
 
     </RelativeLayout>
 

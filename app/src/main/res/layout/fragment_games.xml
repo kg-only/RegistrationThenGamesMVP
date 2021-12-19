@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/back_for_recycler"
     android:orientation="vertical"
-    tools:context=".fragment.GamesFragment">
+    tools:context=".main.ui.gamelist.GamesFragment">
 
 
     <TextView
@@ -51,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Adventure"
+        android:text="Racing"
         android:textColor="@color/white"
         android:textSize="30sp"/>
     <View
